@@ -38,7 +38,7 @@
 
         th.letter, th.number {
             background-color: transparent;
-            color: white;
+            color: yellow;
         }
 
         td.clicked {
