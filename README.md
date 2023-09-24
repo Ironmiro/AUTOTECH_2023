@@ -20,7 +20,7 @@
         }
 
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid white;
             background-color: transparent;
         }
 
@@ -33,7 +33,7 @@
 
         th {
             background-color: #f2f2f2;
-            color: black;
+            color: transparent;
         }
 
         th.letter, th.number {
