@@ -20,7 +20,7 @@
         }
 
         table, th, td {
-            border: transparent;
+            border: black;
             background-color: transparent;
         }
 
@@ -38,7 +38,7 @@
 
         th.letter, th.number {
             background-color: transparent;
-            color: black;
+            color: white;
         }
 
         td.clicked {
