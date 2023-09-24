@@ -20,8 +20,8 @@
         }
 
         table, th, td {
-            border: black;
-            background-color: transparent;
+            border: 1px solid white;
+            background-color: black;
         }
 
         th, td {
