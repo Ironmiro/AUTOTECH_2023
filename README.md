@@ -18,7 +18,7 @@
         table {
             border-collapse: collapse;
             table-layout: fixed; /* Define a largura da tabela como fixa */
-            width: 330px; /* Largura total da tabela */
+            width: 315px; /* Largura total da tabela */
         }
 
         th, td {
