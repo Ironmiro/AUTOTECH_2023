@@ -38,7 +38,7 @@
         }
 
         th.I {
-            width: 30px; /* Largura fixa para a coluna "I" */
+            width: 32px; /* Largura fixa para a coluna "I" */
         }
 
         td.clicked {
@@ -332,7 +332,85 @@
     <div id="teriana-coordinates"></div>
 
     <script>
-        // O restante do seu código JavaScript aqui...
+        const table = document.querySelector('table');
+        const tbody = table.querySelector('tbody');
+        const shotsCounter = document.getElementById('shots-remaining');
+        const terianaCoordinates = document.getElementById('teriana-coordinates');
+        const timeLeft = document.getElementById('time-left');
+        const hitsCount = document.getElementById('hits-count');
+        const startButton = document.getElementById('start-button');
+        const passwordInput = document.getElementById('password-input');
+        let shotsRemaining = 12;
+        let time = 120; // Alteração do tempo para 120 segundos
+        let timerRunning = false;
+        let hits = 0;
+
+        // Função para atualizar o tempo restante
+        function updateTime() {
+            timeLeft.textContent = time;
+            if (time === 0) {
+                clearInterval(timer);
+                alert('TEMPO ESGOTADO! VERIFIQUE SEUS PONTOS E RETIRE SEU BRINDE!');
+            }
+            time--;
+        }
+
+        // Evento de clique no botão INICIAR
+        startButton.addEventListener('click', () => {
+            const password = passwordInput.value;
+            if (password === 'oper123') { // Alteração da senha
+                if (!timerRunning) {
+                    timerRunning = true;
+                    timer = setInterval(updateTime, 1000);
+                }
+            } else {
+                alert('SENHA INCORRETA! MARCELO TA DE OLHO!');
+            }
+        });
+
+        const cells = document.querySelectorAll('td');
+
+        cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                if (timerRunning && shotsRemaining > 0) {
+                    if (!cell.classList.contains('clicked')) {
+                        cell.classList.toggle('clicked');
+                        shotsRemaining--;
+                        shotsCounter.textContent = shotsRemaining;
+
+                        const columnIndex = cell.cellIndex;
+                        const rowIndex = cell.parentNode.rowIndex;
+
+                        const columnLetter = String.fromCharCode(65 + columnIndex - 1);
+                        const rowNumber = rowIndex;
+
+                        const shotCoordinate = columnLetter + rowNumber;
+
+                        // Verifique se o tiro acertou uma coordenada da nave Teriana
+                        if (isTerianaCoordinate(shotCoordinate)) {
+                            cell.classList.remove('blue', 'red', 'yellow', 'green');
+                            cell.classList.add('hit');
+                            hits++;
+                            hitsCount.textContent = hits;
+                        } else {
+                            cell.classList.remove('blue', 'red', 'yellow', 'green');
+                            cell.classList.add('miss');
+                        }
+
+                        if (shotsRemaining === 0) {
+                            // Todos os tiros foram dados, exibe a FRASE
+                            terianaCoordinates.textContent = 'ICHI.. EFETIVAMENTE SEUS TIROS ACABARAM!';
+                        }
+                    }
+                }
+            });
+        });
+
+        // Função para verificar se a coordenada pertence à nave Teriana
+        function isTerianaCoordinate(coordinate) {
+            const terianaCoordinates = ['H6', 'H7', 'H9', 'I6', 'I7', 'I8', 'I9', 'J6', 'J7', 'J8'];
+            return terianaCoordinates.includes(coordinate);
+        }
     </script>
 </body>
 </html>
