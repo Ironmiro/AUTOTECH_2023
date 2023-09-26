@@ -5,30 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-image: url("https://i.gifer.com/XzZg.gif");
-            background-size: cover;
-            background-attachment: fixed;
+            background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
+            flex-direction: column;
             font-family: "Press Start 2P", monospace;
-            color: white;
         }
 
         table {
             border-collapse: collapse;
-            table-layout: fixed;
+            table-layout: fixed; /* Define a largura da tabela como fixa */
+            z-index: -1; /* Empurra a tabela para trás */
         }
 
         table, th, td {
             border: 1px solid white;
-        }
-
-        table {
-            background-color: transparent !important;
         }
 
         th, td {
@@ -36,6 +30,8 @@
             height: 30px;
             text-align: center;
             cursor: pointer;
+            background-color: transparent !important; /* Fundo transparente para todas as células */
+            opacity: 1 !important; /* Opacidade total para evitar transparência */
         }
 
         th {
@@ -49,7 +45,7 @@
         }
 
         th.I {
-            width: 35px;
+            width: 30px; /* Largura fixa para a coluna "I" */
         }
 
         td.clicked {
@@ -68,7 +64,7 @@
         }
 
         td.miss {
-            background-color: transparent !important;
+            background-color: transparent !important; /* Fundo transparente para células não atingidas */
         }
 
         td.red {
@@ -105,6 +101,7 @@
             font-size: 18px;
             display: inline-block;
             margin-right: 10px;
+            color: yellow;
         }
 
         #password-input, #start-button {
@@ -113,15 +110,17 @@
             padding: 5px;
             text-align: center;
             color: yellow;
-            background-color: transparent;
-            border: 1px solid white;
         }
 
         .center-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 20px; /* Ajuste a margem superior conforme necessário */
+        }
+
+        #password-input, #start-button {
+            margin: 5px;
         }
 
         #teriana-coordinates {
@@ -143,6 +142,11 @@
             color: white;
             font-size: 18px;
         }
+
+        body {
+            background-image: url("https://i.gifer.com/XzZg.gif");
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
@@ -152,7 +156,7 @@
         <span id="time">TIME: <span id="time-left" style="color: green;">120</span> s</span>
         <span id="hits">PTS: <span id="hits-count" style="color: yellow;">0</span></span>
     </div>
-    <table>
+     <table>
         <thead>
             <tr>
                 <th class="letter"></th>
@@ -164,12 +168,13 @@
                 <th class="letter">F</th>
                 <th class="letter">G</th>
                 <th class="letter">H</th>
-                <th class="letter I">I</th>
+                <th class="letter I">I</th> <!-- Adicionada classe I para a coluna "I" -->
                 <th class="letter">J</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+              <!-- Quadrante Vermelho -->
+           <tr>
                 <th class="number">01</th>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -234,10 +239,11 @@
                 <td class="blue"></td>
                 <td class="blue"></td>
             </tr>
+            <!-- Quadrante Amarelo -->
             <tr>
                 <th class="number">06</th>
                 <td class="yellow"></td>
-                <td class="yellow"></td>
+                <td class "yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -319,11 +325,11 @@
         const startButton = document.getElementById('start-button');
         const passwordInput = document.getElementById('password-input');
         let shotsRemaining = 12;
-        let time = 120;
+        let time = 120; // Alteração do tempo para 120 segundos
         let timerRunning = false;
         let hits = 0;
-        let timer;
 
+        // Função para atualizar o tempo restante
         function updateTime() {
             timeLeft.textContent = time;
             if (time === 0) {
@@ -333,9 +339,10 @@
             time--;
         }
 
+        // Evento de clique no botão INICIAR
         startButton.addEventListener('click', () => {
             const password = passwordInput.value;
-            if (password === 'oper123') {
+            if (password === 'oper123') { // Alteração da senha
                 if (!timerRunning) {
                     timerRunning = true;
                     timer = setInterval(updateTime, 1000);
@@ -363,6 +370,7 @@
                         
                         const shotCoordinate = columnLetter + rowNumber;
                         
+                        // Verifique se o tiro acertou uma coordenada da nave Teriana
                         if (isTerianaCoordinate(shotCoordinate)) {
                             cell.classList.remove('blue', 'red', 'yellow', 'green');
                             cell.classList.add('hit');
@@ -374,6 +382,7 @@
                         }
                         
                         if (shotsRemaining === 0) {
+                            // Todos os tiros foram dados, exibe a FRASE
                             terianaCoordinates.textContent = 'ICHI.. EFETIVAMENTE SEUS TIROS ACABARAM!';
                         }
                     }
@@ -381,6 +390,7 @@
             });
         });
         
+        // Função para verificar se a coordenada pertence à nave Teriana
         function isTerianaCoordinate(coordinate) {
             const terianaCoordinates = ['H6', 'H7', 'H9', 'I6', 'I7', 'I8', 'I9', 'J6', 'J7', 'J8'];
             return terianaCoordinates.includes(coordinate);
