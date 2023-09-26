@@ -25,13 +25,20 @@
             background-color: transparent !important; /* Fundo transparente para todas as células */
         }
 
+        th, td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
         th {
-            background-color: black; /* Fundo preto para todas as células th */
-            color: white;
+            background-color: #f2f2f2;
+            color: black;
         }
 
         th.letter, th.number {
-            background-color: black !important; /* Fundo preto para células de letras e números */
+            background-color: transparent !important;
             color: white;
         }
 
