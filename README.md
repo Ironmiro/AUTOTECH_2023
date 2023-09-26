@@ -39,7 +39,7 @@
 
         th.letter, th.number {
             background-color: black;
-            color: black;
+            color: white;
         }
 
         td.clicked {
