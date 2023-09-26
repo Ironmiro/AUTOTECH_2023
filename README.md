@@ -18,23 +18,16 @@
         table {
             border-collapse: collapse;
             table-layout: fixed; /* Define a largura da tabela como fixa */
-        }
-
-        table, th, td {
-            border: 1px solid white;
-            background-color: black;
+            width: 330px; /* Largura total da tabela */
         }
 
         th, td {
-            width: 30px;
+            border: 1px solid white;
+            background-color: black;
+            width: 30px; /* Largura fixa para todas as células */
             height: 30px;
             text-align: center;
             cursor: pointer;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            color: black;
         }
 
         th.letter, th.number {
@@ -239,7 +232,7 @@
             <tr>
                 <th class="number">06</th>
                 <td class="yellow"></td>
-                <td class="yellow"></td>
+                <td class "yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -353,7 +346,7 @@
 
         cells.forEach(cell => {
             cell.addEventListener('click', () => {
-                if (timerRunning && shotsRemaining > 0) {
+                if (timerRunning and shotsRemaining > 0) {
                     if (!cell.classList.contains('clicked')) {
                         cell.classList.toggle('clicked');
                         shotsRemaining--;
