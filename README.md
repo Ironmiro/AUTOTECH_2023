@@ -339,7 +339,7 @@
                     timer = setInterval(updateTime, 1000);
                 }
             } else {
-                alert('SENHA INCORRETA! VERIFIQUE UMA SENHA COM O SELGO GARIANI DE QUALIDADE!');
+                alert('SENHA INCORRETA! MARCELO TA DE OLHO!');
             }
         });
         
