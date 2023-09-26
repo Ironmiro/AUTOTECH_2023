@@ -17,6 +17,7 @@
 
         table {
             border-collapse: collapse;
+            table-layout: fixed; /* Define a largura da tabela como fixa */
         }
 
         table, th, td {
@@ -101,7 +102,7 @@
         }
 
         #time {
-            color: yellow;
+            color: yellow !important;
         }
 
         #hits {
