@@ -339,7 +339,7 @@
                     timer = setInterval(updateTime, 1000);
                 }
             } else {
-                alert('Senha incorreta. Insira a senha correta para iniciar o jogo.');
+                alert('SENHA INCORRETA! VERIFIQUE UMA SENHA COM O SELGO GARIANI DE QUALIDADE!');
             }
         });
         
@@ -374,7 +374,7 @@
                         
                         if (shotsRemaining === 0) {
                             // Todos os tiros foram dados, exibe a FRASE
-                            terianaCoordinates.textContent = 'ICHI.. SEUS TIROS ACABARAM!';
+                            terianaCoordinates.textContent = 'ICHI.. EFETIVAMENTE SEUS TIROS ACABARAM!';
                         }
                     }
                 }
