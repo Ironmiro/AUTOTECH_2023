@@ -57,7 +57,7 @@
         @keyframes explode {
             0% { background-color: red; }
             33% { background-color: yellow; }
-            66% { background-color: white; }
+            66% { background-color: transparent !important; }
             100% { background-color: red; }
         }
 
@@ -128,10 +128,6 @@
             margin-top: 20px; /* Ajuste a margem superior conforme necessário */
         }
 
-        #password-input, #start-button {
-            margin: 5px;
-        }
-        
         #teriana-coordinates {
             color: yellow;
             font-size: 20px;
@@ -146,7 +142,7 @@
                 opacity: 0;
             }
         }
-        
+
         #time-left {
             color: white;
             font-size: 18px;
@@ -252,7 +248,7 @@
             <tr>
                 <th class="number">06</th>
                 <td class="yellow"></td>
-                <td class "yellow"></td>
+                <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
