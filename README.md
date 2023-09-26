@@ -92,7 +92,7 @@
         }
 
         #shots, #time, #hits {
-            font-size: 19px;
+            font-size: 20px;
             display: inline-block;
             margin-right: 12px;
         }
@@ -136,7 +136,7 @@
 
         #time-left {
             color: yellow;
-            font-size: 19px;
+            font-size: 20px;
         }
 
         body {
