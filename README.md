@@ -92,9 +92,9 @@
         }
 
         #shots, #time, #hits {
-            font-size: 18px;
+            font-size: 19px;
             display: inline-block;
-            margin-right: 10px;
+            margin-right: 12px;
         }
 
         #shots {
@@ -102,7 +102,7 @@
         }
 
         #time {
-            color: yellow !important;
+            color: yellow;
         }
 
         #hits {
@@ -116,7 +116,7 @@
             width: 150px;
             padding: 5px;
             text-align: center;
-            color: yellow;
+            color: blue;
         }
 
         #teriana-coordinates {
@@ -135,8 +135,8 @@
         }
 
         #time-left {
-            color: white;
-            font-size: 18px;
+            color: yellow;
+            font-size: 19px;
         }
 
         body {
@@ -339,13 +339,13 @@
         // Evento de clique no botão INICIAR
         startButton.addEventListener('click', () => {
             const password = passwordInput.value;
-            if (password === 'oper123') { // Alteração da senha
+            if (password === 'teste') { // Alteração da senha
                 if (!timerRunning) {
                     timerRunning = true;
                     timer = setInterval(updateTime, 1000);
                 }
             } else {
-                alert('Senha incorreta. Insira a senha correta para iniciar o jogo.');
+                alert('Senha incorreta. Gariani Tá de Olho!');
             }
         });
 
