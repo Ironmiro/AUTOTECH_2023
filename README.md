@@ -21,7 +21,7 @@
         }
 
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid white;
             background-color: transparent !important; /* Fundo transparente para todas as células */
         }
 
@@ -38,8 +38,8 @@
         }
 
         th.letter, th.number {
-            background-color: transparent;
-            color: black;
+            background-color: transparent !important;
+            color: white;
         }
 
         th.I {
