@@ -38,7 +38,7 @@
         }
 
         th.letter, th.number {
-            background-color: transparent;
+            background-color: black;
             color: black;
         }
 
