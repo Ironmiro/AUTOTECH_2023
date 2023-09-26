@@ -18,34 +18,25 @@
         table {
             border-collapse: collapse;
             table-layout: fixed; /* Define a largura da tabela como fixa */
-            position: relative; /* Adicionado para permitir que a tabela ocupe o fundo preto */
-            z-index: 1; /* Z-index definido para manter a tabela na frente do fundo */
         }
 
         table, th, td {
             border: 1px solid white;
-        }
-
-        th, td {
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            cursor: pointer;
-            background-color: black; /* Fundo preto para todas as células */
+            background-color: transparent !important; /* Fundo transparente para todas as células */
         }
 
         th {
-            background-color: #f2f2f2;
-            color: black;
+            background-color: black; /* Fundo preto para todas as células th */
+            color: white;
         }
 
         th.letter, th.number {
-            background-color: transparent;
+            background-color: transparent !important;
             color: white;
         }
 
         th.I {
-            width: 30px;
+            width: 30px; /* Largura fixa para a coluna "I" */
         }
 
         td.clicked {
@@ -64,7 +55,7 @@
         }
 
         td.miss {
-            background-color: black;
+            background-color: transparent !important; /* Fundo transparente para células não atingidas */
         }
 
         td.red {
@@ -127,7 +118,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 20px; /* Ajuste a margem superior conforme necessário */
         }
 
         #password-input, #start-button {
@@ -178,8 +169,8 @@
                 <th class="letter">E</th>
                 <th class="letter">F</th>
                 <th class="letter">G</th>
-                <th class="letter H">H</th> <!-- Alterada para "H" -->
-                <th class="letter I">I</th>
+                <th class="letter">H</th>
+                <th class="letter I">I</th> <!-- Adicionada classe I para a coluna "I" -->
                 <th class="letter">J</th>
             </tr>
         </thead>
@@ -254,7 +245,7 @@
             <tr>
                 <th class="number">06</th>
                 <td class="yellow"></td>
-                <td class="yellow"></td>
+                <td class "yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -336,7 +327,7 @@
         const startButton = document.getElementById('start-button');
         const passwordInput = document.getElementById('password-input');
         let shotsRemaining = 12;
-        let time = 120;
+        let time = 120; // Alteração do tempo para 120 segundos
         let timerRunning = false;
         let hits = 0;
 
@@ -353,7 +344,7 @@
         // Evento de clique no botão INICIAR
         startButton.addEventListener('click', () => {
             const password = passwordInput.value;
-            if (password === 'oper123') {
+            if (password === 'oper123') { // Alteração da senha
                 if (!timerRunning) {
                     timerRunning = true;
                     timer = setInterval(updateTime, 1000);
