@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: black;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://i.gifer.com/XzZg.gif");
+            background-size: cover;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            flex-direction: column;
             font-family: "Press Start 2P", monospace;
+            color: white;
         }
 
         table {
             border-collapse: collapse;
-            table-layout: fixed; /* Define a largura da tabela como fixa */
+            table-layout: fixed;
         }
 
         table, th, td {
             border: 1px solid white;
-            background-color: transparent !important; /* Fundo transparente para todas as células */
+        }
+
+        table {
+            background-color: transparent !important;
         }
 
         th, td {
@@ -43,7 +49,7 @@
         }
 
         th.I {
-            width: 30px; /* Largura fixa para a coluna "I" */
+            width: 35px;
         }
 
         td.clicked {
@@ -57,12 +63,12 @@
         @keyframes explode {
             0% { background-color: red; }
             33% { background-color: yellow; }
-            66% { background-color: transparent !important; }
+            66% { background-color: white; }
             100% { background-color: red; }
         }
 
         td.miss {
-            background-color: transparent !important; /* Fundo transparente para células não atingidas */
+            background-color: transparent !important;
         }
 
         td.red {
@@ -101,31 +107,21 @@
             margin-right: 10px;
         }
 
-        #shots {
-            color: yellow;
-        }
-
-        #time {
-            color: yellow;
-        }
-
-        #hits {
-            color: yellow;
-        }
-
         #password-input, #start-button {
             width: 150px;
             margin: 5px;
             padding: 5px;
             text-align: center;
             color: yellow;
+            background-color: transparent;
+            border: 1px solid white;
         }
-        
+
         .center-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px; /* Ajuste a margem superior conforme necessário */
+            margin-top: 20px;
         }
 
         #teriana-coordinates {
@@ -147,11 +143,6 @@
             color: white;
             font-size: 18px;
         }
-        
-        body {
-            background-image: url("https://i.gifer.com/XzZg.gif");
-            background-size: cover;
-        }
     </style>
 </head>
 <body>
@@ -161,7 +152,7 @@
         <span id="time">TIME: <span id="time-left" style="color: green;">120</span> s</span>
         <span id="hits">PTS: <span id="hits-count" style="color: yellow;">0</span></span>
     </div>
-     <table>
+    <table>
         <thead>
             <tr>
                 <th class="letter"></th>
@@ -173,13 +164,12 @@
                 <th class="letter">F</th>
                 <th class="letter">G</th>
                 <th class="letter">H</th>
-                <th class="letter I">I</th> <!-- Adicionada classe I para a coluna "I" -->
+                <th class="letter I">I</th>
                 <th class="letter">J</th>
             </tr>
         </thead>
         <tbody>
-              <!-- Quadrante Vermelho -->
-           <tr>
+            <tr>
                 <th class="number">01</th>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -244,7 +234,6 @@
                 <td class="blue"></td>
                 <td class="blue"></td>
             </tr>
-            <!-- Quadrante Amarelo -->
             <tr>
                 <th class="number">06</th>
                 <td class="yellow"></td>
@@ -330,11 +319,11 @@
         const startButton = document.getElementById('start-button');
         const passwordInput = document.getElementById('password-input');
         let shotsRemaining = 12;
-        let time = 120; // Alteração do tempo para 120 segundos
+        let time = 120;
         let timerRunning = false;
         let hits = 0;
+        let timer;
 
-        // Função para atualizar o tempo restante
         function updateTime() {
             timeLeft.textContent = time;
             if (time === 0) {
@@ -344,10 +333,9 @@
             time--;
         }
 
-        // Evento de clique no botão INICIAR
         startButton.addEventListener('click', () => {
             const password = passwordInput.value;
-            if (password === 'oper123') { // Alteração da senha
+            if (password === 'oper123') {
                 if (!timerRunning) {
                     timerRunning = true;
                     timer = setInterval(updateTime, 1000);
@@ -375,7 +363,6 @@
                         
                         const shotCoordinate = columnLetter + rowNumber;
                         
-                        // Verifique se o tiro acertou uma coordenada da nave Teriana
                         if (isTerianaCoordinate(shotCoordinate)) {
                             cell.classList.remove('blue', 'red', 'yellow', 'green');
                             cell.classList.add('hit');
@@ -387,7 +374,6 @@
                         }
                         
                         if (shotsRemaining === 0) {
-                            // Todos os tiros foram dados, exibe a FRASE
                             terianaCoordinates.textContent = 'ICHI.. EFETIVAMENTE SEUS TIROS ACABARAM!';
                         }
                     }
@@ -395,7 +381,6 @@
             });
         });
         
-        // Função para verificar se a coordenada pertence à nave Teriana
         function isTerianaCoordinate(coordinate) {
             const terianaCoordinates = ['H6', 'H7', 'H9', 'I6', 'I7', 'I8', 'I9', 'J6', 'J7', 'J8'];
             return terianaCoordinates.includes(coordinate);
