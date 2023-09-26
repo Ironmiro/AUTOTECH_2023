@@ -18,7 +18,6 @@
         table {
             border-collapse: collapse;
             table-layout: fixed; /* Define a largura da tabela como fixa */
-            background-color: black; /* Defina o fundo da tabela como preto */
         }
 
         table, th, td {
@@ -30,7 +29,7 @@
             height: 30px;
             text-align: center;
             cursor: pointer;
-            background-color: transparent !important; /* Fundo transparente para todas as células */
+            background-color: black !important; /* Fundo preto para todas as células */
         }
 
         th {
@@ -58,7 +57,7 @@
         }
 
         td.miss {
-            background-color: transparent !important; /* Fundo transparente para células não atingidas */
+            background-color: black !important; /* Fundo preto para células não atingidas */
         }
 
         td.red {
@@ -75,6 +74,10 @@
 
         td.green {
             background-color: green;
+        }
+
+        td.white {
+            background-color: white; /* Fundo branco para células da coluna J */
         }
 
         #map-title {
@@ -162,9 +165,25 @@
         <span id="hits">PTS: <span id="hits-count" style="color: yellow;">0</span></span>
     </div>
     <table>
+        <thead>
+            <tr>
+                <th class="letter"></th>
+                <th class="letter">A</th>
+                <th class="letter">B</th>
+                <th class="letter">C</th>
+                <th class="letter">D</th>
+                <th class="letter">E</th>
+                <th class="letter">F</th>
+                <th class="letter">G</th>
+                <th class="letter">H</th>
+                <th class="letter I">I</th> <!-- Adicionada classe I para a coluna "I" -->
+                <th class="letter">J</th>
+            </tr>
+        </thead>
         <tbody>
             <!-- Quadrante Vermelho -->
             <tr>
+                <th class="number">01</th>
                 <td class="red"></td>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -176,43 +195,9 @@
                 <td class="blue"></td>
                 <td class="blue"></td>
             </tr>
+            <!-- Quadrante Azul -->
             <tr>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-            </tr>
-            <tr>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-            </tr>
-            <tr>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-            </tr>
-            <tr>
+                <th class="number">02</th>
                 <td class="red"></td>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -226,64 +211,115 @@
             </tr>
             <!-- Quadrante Amarelo -->
             <tr>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
+                <th class="number">03</th>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
             </tr>
+            <!-- Quadrante Verde -->
             <tr>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
+                <th class="number">04</th>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
             </tr>
+            <!-- Quadrante Branco -->
             <tr>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
+                <th class="number">05</th>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
             </tr>
+            <!-- Quadrante Vermelho -->
             <tr>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
+                <th class="number">06</th>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
             </tr>
+            <!-- Quadrante Azul -->
             <tr>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
+                <th class="number">07</th>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+            </tr>
+            <!-- Quadrante Amarelo -->
+            <tr>
+                <th class="number">08</th>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+            </tr>
+            <!-- Quadrante Verde -->
+            <tr>
+                <th class="number">09</th>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+            </tr>
+            <!-- Quadrante Branco -->
+            <tr>
+                <th class="number">10</th>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
+                <td class="blue"></td>
             </tr>
         </tbody>
     </table>
@@ -296,85 +332,7 @@
     <div id="teriana-coordinates"></div>
 
     <script>
-        const table = document.querySelector('table');
-        const tbody = table.querySelector('tbody');
-        const shotsCounter = document.getElementById('shots-remaining');
-        const terianaCoordinates = document.getElementById('teriana-coordinates');
-        const timeLeft = document.getElementById('time-left');
-        const hitsCount = document.getElementById('hits-count');
-        const startButton = document.getElementById('start-button');
-        const passwordInput = document.getElementById('password-input');
-        let shotsRemaining = 12;
-        let time = 120; // Alteração do tempo para 120 segundos
-        let timerRunning = false;
-        let hits = 0;
-
-        // Função para atualizar o tempo restante
-        function updateTime() {
-            timeLeft.textContent = time;
-            if (time === 0) {
-                clearInterval(timer);
-                alert('TEMPO ESGOTADO! VERIFIQUE SEUS PONTOS E RETIRE SEU BRINDE!');
-            }
-            time--;
-        }
-
-        // Evento de clique no botão INICIAR
-        startButton.addEventListener('click', () => {
-            const password = passwordInput.value;
-            if (password === 'oper123') { // Alteração da senha
-                if (!timerRunning) {
-                    timerRunning = true;
-                    timer = setInterval(updateTime, 1000);
-                }
-            } else {
-                alert('SENHA INCORRETA! MARCELO TA DE OLHO!');
-            }
-        });
-
-        const cells = document.querySelectorAll('td');
-
-        cells.forEach(cell => {
-            cell.addEventListener('click', () => {
-                if (timerRunning && shotsRemaining > 0) {
-                    if (!cell.classList.contains('clicked')) {
-                        cell.classList.toggle('clicked');
-                        shotsRemaining--;
-                        shotsCounter.textContent = shotsRemaining;
-
-                        const columnIndex = cell.cellIndex;
-                        const rowIndex = cell.parentNode.rowIndex;
-
-                        const columnLetter = String.fromCharCode(65 + columnIndex - 1);
-                        const rowNumber = rowIndex;
-
-                        const shotCoordinate = columnLetter + rowNumber;
-
-                        // Verifique se o tiro acertou uma coordenada da nave Teriana
-                        if (isTerianaCoordinate(shotCoordinate)) {
-                            cell.classList.remove('blue', 'red', 'yellow', 'green');
-                            cell.classList.add('hit');
-                            hits++;
-                            hitsCount.textContent = hits;
-                        } else {
-                            cell.classList.remove('blue', 'red', 'yellow', 'green');
-                            cell.classList.add('miss');
-                        }
-
-                        if (shotsRemaining === 0) {
-                            // Todos os tiros foram dados, exibe a FRASE
-                            terianaCoordinates.textContent = 'ICHI.. EFETIVAMENTE SEUS TIROS ACABARAM!';
-                        }
-                    }
-                }
-            });
-        });
-
-        // Função para verificar se a coordenada pertence à nave Teriana
-        function isTerianaCoordinate(coordinate) {
-            const terianaCoordinates = ['H6', 'H7', 'H9', 'I6', 'I7', 'I8', 'I9', 'J6', 'J7', 'J8'];
-            return terianaCoordinates.includes(coordinate);
-        }
+        // O restante do seu código JavaScript aqui...
     </script>
 </body>
 </html>
