@@ -38,11 +38,6 @@
             color: black;
         }
 
-        th.letter, th.number {
-            background-color: transparent !important;
-            color: white;
-        }
-
         th.I {
             width: 30px; /* Largura fixa para a coluna "I" */
         }
@@ -121,7 +116,7 @@
             text-align: center;
             color: yellow;
         }
-        
+
         .center-container {
             display: flex;
             flex-direction: column;
@@ -132,7 +127,7 @@
         #password-input, #start-button {
             margin: 5px;
         }
-        
+
         #teriana-coordinates {
             color: yellow;
             font-size: 20px;
@@ -147,12 +142,12 @@
                 opacity: 0;
             }
         }
-        
+
         #time-left {
             color: white;
             font-size: 18px;
         }
-        
+
         body {
             background-image: url("https://i.gifer.com/XzZg.gif");
             background-size: cover;
@@ -166,26 +161,10 @@
         <span id="time">TIME: <span id="time-left" style="color: green;">120</span> s</span>
         <span id="hits">PTS: <span id="hits-count" style="color: yellow;">0</span></span>
     </div>
-     <table>
-        <thead>
-            <tr>
-                <th class="letter"></th>
-                <th class="letter">A</th>
-                <th class="letter">B</th>
-                <th class="letter">C</th>
-                <th class="letter">D</th>
-                <th class="letter">E</th>
-                <th class="letter">F</th>
-                <th class="letter">G</th>
-                <th class="letter">H</th>
-                <th class="letter I">I</th> <!-- Adicionada classe I para a coluna "I" -->
-                <th class="letter">J</th>
-            </tr>
-        </thead>
+    <table>
         <tbody>
-              <!-- Quadrante Vermelho -->
-           <tr>
-                <th class="number">01</th>
+            <!-- Quadrante Vermelho -->
+            <tr>
                 <td class="red"></td>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -198,7 +177,6 @@
                 <td class="blue"></td>
             </tr>
             <tr>
-                <th class="number">02</th>
                 <td class="red"></td>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -211,7 +189,6 @@
                 <td class="blue"></td>
             </tr>
             <tr>
-                <th class="number">03</th>
                 <td class="red"></td>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -224,7 +201,6 @@
                 <td class="blue"></td>
             </tr>
             <tr>
-                <th class="number">04</th>
                 <td class="red"></td>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -237,7 +213,6 @@
                 <td class="blue"></td>
             </tr>
             <tr>
-                <th class="number">05</th>
                 <td class="red"></td>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -251,20 +226,6 @@
             </tr>
             <!-- Quadrante Amarelo -->
             <tr>
-                <th class="number">06</th>
-                <td class="yellow"></td>
-                <td class "yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="yellow"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-                <td class="green"></td>
-            </tr>
-            <tr>
-                <th class="number">07</th>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -277,7 +238,6 @@
                 <td class="green"></td>
             </tr>
             <tr>
-                <th class="number">08</th>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -290,7 +250,6 @@
                 <td class="green"></td>
             </tr>
             <tr>
-                <th class="number">09</th>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -303,7 +262,18 @@
                 <td class="green"></td>
             </tr>
             <tr>
-                <th class="number">10</th>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+            </tr>
+            <tr>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -321,7 +291,7 @@
         <input type="password" id="password-input" placeholder="PASSWORD">
         <button id="start-button">START</button>
     </div>
-    
+
     <!-- POSIÇÃO INIMIGA -->
     <div id="teriana-coordinates"></div>
 
@@ -361,9 +331,9 @@
                 alert('SENHA INCORRETA! MARCELO TA DE OLHO!');
             }
         });
-        
+
         const cells = document.querySelectorAll('td');
-        
+
         cells.forEach(cell => {
             cell.addEventListener('click', () => {
                 if (timerRunning && shotsRemaining > 0) {
@@ -371,15 +341,15 @@
                         cell.classList.toggle('clicked');
                         shotsRemaining--;
                         shotsCounter.textContent = shotsRemaining;
-                        
+
                         const columnIndex = cell.cellIndex;
                         const rowIndex = cell.parentNode.rowIndex;
-                        
+
                         const columnLetter = String.fromCharCode(65 + columnIndex - 1);
                         const rowNumber = rowIndex;
-                        
+
                         const shotCoordinate = columnLetter + rowNumber;
-                        
+
                         // Verifique se o tiro acertou uma coordenada da nave Teriana
                         if (isTerianaCoordinate(shotCoordinate)) {
                             cell.classList.remove('blue', 'red', 'yellow', 'green');
@@ -390,7 +360,7 @@
                             cell.classList.remove('blue', 'red', 'yellow', 'green');
                             cell.classList.add('miss');
                         }
-                        
+
                         if (shotsRemaining === 0) {
                             // Todos os tiros foram dados, exibe a FRASE
                             terianaCoordinates.textContent = 'ICHI.. EFETIVAMENTE SEUS TIROS ACABARAM!';
@@ -399,7 +369,7 @@
                 }
             });
         });
-        
+
         // Função para verificar se a coordenada pertence à nave Teriana
         function isTerianaCoordinate(coordinate) {
             const terianaCoordinates = ['H6', 'H7', 'H9', 'I6', 'I7', 'I8', 'I9', 'J6', 'J7', 'J8'];
@@ -408,4 +378,3 @@
     </script>
 </body>
 </html>
-
