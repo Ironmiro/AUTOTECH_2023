@@ -21,7 +21,7 @@
         }
 
         table, th, td {
-            border: 1px solid white;
+            border: 1px solid black;
         }
 
         th, td {
@@ -38,7 +38,7 @@
         }
 
         th.I {
-            width: 32px; /* Largura fixa para a coluna "I" */
+            width: 30px; /* Largura fixa para a coluna "I" */
         }
 
         td.clicked {
@@ -164,7 +164,7 @@
         <span id="time">TIME: <span id="time-left" style="color: green;">120</span> s</span>
         <span id="hits">PTS: <span id="hits-count" style="color: yellow;">0</span></span>
     </div>
-    <table>
+     <table>
         <thead>
             <tr>
                 <th class="letter"></th>
@@ -176,13 +176,13 @@
                 <th class="letter">F</th>
                 <th class="letter">G</th>
                 <th class="letter">H</th>
-                <th class="letter I">I</th> <!-- Adicionada classe I para a coluna "I" -->
+                <th class="letter">I</th>
                 <th class="letter">J</th>
             </tr>
         </thead>
         <tbody>
-            <!-- Quadrante Vermelho -->
-            <tr>
+              <!-- Quadrante Vermelho -->
+           <tr>
                 <th class="number">01</th>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -195,7 +195,6 @@
                 <td class="blue"></td>
                 <td class="blue"></td>
             </tr>
-            <!-- Quadrante Azul -->
             <tr>
                 <th class="number">02</th>
                 <td class="red"></td>
@@ -209,7 +208,6 @@
                 <td class="blue"></td>
                 <td class="blue"></td>
             </tr>
-            <!-- Quadrante Amarelo -->
             <tr>
                 <th class="number">03</th>
                 <td class="red"></td>
@@ -223,7 +221,6 @@
                 <td class="blue"></td>
                 <td class="blue"></td>
             </tr>
-            <!-- Quadrante Verde -->
             <tr>
                 <th class="number">04</th>
                 <td class="red"></td>
@@ -237,7 +234,6 @@
                 <td class="blue"></td>
                 <td class="blue"></td>
             </tr>
-            <!-- Quadrante Branco -->
             <tr>
                 <th class="number">05</th>
                 <td class="red"></td>
@@ -251,75 +247,71 @@
                 <td class="blue"></td>
                 <td class="blue"></td>
             </tr>
-            <!-- Quadrante Vermelho -->
-            <tr>
-                <th class="number">06</th>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-            </tr>
-            <!-- Quadrante Azul -->
-            <tr>
-                <th class="number">07</th>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-            </tr>
             <!-- Quadrante Amarelo -->
             <tr>
-                <th class="number">08</th>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
+                <th class="number">06</th>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
             </tr>
-            <!-- Quadrante Verde -->
+            <tr>
+                <th class="number">07</th>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+            </tr>
+            <tr>
+                <th class="number">08</th>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+            </tr>
             <tr>
                 <th class="number">09</th>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
             </tr>
-            <!-- Quadrante Branco -->
             <tr>
                 <th class="number">10</th>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="red"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
-                <td class="blue"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="yellow"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
+                <td class="green"></td>
             </tr>
         </tbody>
     </table>
