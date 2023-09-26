@@ -17,11 +17,12 @@
 
         table {
             border-collapse: collapse;
+            table-layout: fixed; /* Define a largura da tabela como fixa */
         }
 
         table, th, td {
             border: 1px solid black;
-            background-color: transparent;
+            background-color: transparent !important; /* Fundo transparente para todas as células */
         }
 
         th, td {
@@ -41,6 +42,10 @@
             color: black;
         }
 
+        th.I {
+            width: 30px; /* Largura fixa para a coluna "I" */
+        }
+
         td.clicked {
             background-color: red;
         }
@@ -57,7 +62,7 @@
         }
 
         td.miss {
-            background-color: transparent;
+            background-color: transparent !important; /* Fundo transparente para células não atingidas */
         }
 
         td.red {
@@ -108,12 +113,23 @@
             color: yellow;
         }
 
-        #password-input {
+        #password-input, #start-button {
             width: 150px;
             margin: 5px;
             padding: 5px;
             text-align: center;
             color: yellow;
+        }
+        
+        .center-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px; /* Ajuste a margem superior conforme necessário */
+        }
+
+        #password-input, #start-button {
+            margin: 5px;
         }
         
         #teriana-coordinates {
@@ -161,7 +177,7 @@
                 <th class="letter">F</th>
                 <th class="letter">G</th>
                 <th class="letter">H</th>
-                <th class="letter">I</th>
+                <th class="letter I">I</th> <!-- Adicionada classe I para a coluna "I" -->
                 <th class="letter">J</th>
             </tr>
         </thead>
@@ -236,7 +252,7 @@
             <tr>
                 <th class="number">06</th>
                 <td class="yellow"></td>
-                <td class="yellow"></td>
+                <td class "yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -300,8 +316,10 @@
             </tr>
         </tbody>
     </table>
-    <input type="password" id="password-input" placeholder="PASSWORD">
-    <button id="start-button">         START         </button>
+    <div class="center-container">
+        <input type="password" id="password-input" placeholder="PASSWORD">
+        <button id="start-button">START</button>
+    </div>
     
     <!-- POSIÇÃO INIMIGA -->
     <div id="teriana-coordinates"></div>
