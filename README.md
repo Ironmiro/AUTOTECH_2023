@@ -31,7 +31,7 @@
         }
 
         th.letter, th.number {
-            background-color: transparent !important;
+            background-color: black !important; /* Fundo preto para células de letras e números */
             color: white;
         }
 
@@ -245,7 +245,7 @@
             <tr>
                 <th class="number">06</th>
                 <td class="yellow"></td>
-                <td class "yellow"></td>
+                <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
