@@ -17,11 +17,13 @@
 
         table {
             border-collapse: collapse;
-            table-layout: fixed; /* Define a largura da tabela como fixa */
+            margin-top: 20px; /* Centralizar a tabela verticalmente */
         }
 
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid white;
+            background-color: black; /* Alterado para preto */
+            color: white; /* Alterado para branco */
         }
 
         th, td {
@@ -29,7 +31,6 @@
             height: 30px;
             text-align: center;
             cursor: pointer;
-            background-color: black !important; /* Fundo preto para todas as células */
         }
 
         th {
@@ -37,8 +38,9 @@
             color: black;
         }
 
-        th.I {
-            width: 30px; /* Largura fixa para a coluna "I" */
+        th.letter, th.number {
+            background-color: transparent;
+            color: white;
         }
 
         td.clicked {
@@ -57,7 +59,7 @@
         }
 
         td.miss {
-            background-color: black !important; /* Fundo preto para células não atingidas */
+            background-color: black; /* Alterado para preto */
         }
 
         td.red {
@@ -74,10 +76,6 @@
 
         td.green {
             background-color: green;
-        }
-
-        td.white {
-            background-color: white; /* Fundo branco para células da coluna J */
         }
 
         #map-title {
@@ -98,17 +96,6 @@
             font-size: 18px;
             display: inline-block;
             margin-right: 10px;
-        }
-
-        #shots {
-            color: yellow;
-        }
-
-        #time {
-            color: yellow;
-        }
-
-        #hits {
             color: yellow;
         }
 
@@ -118,17 +105,6 @@
             padding: 5px;
             text-align: center;
             color: yellow;
-        }
-
-        .center-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px; /* Ajuste a margem superior conforme necessário */
-        }
-
-        #password-input, #start-button {
-            margin: 5px;
         }
 
         #teriana-coordinates {
@@ -147,7 +123,7 @@
         }
 
         #time-left {
-            color: yellow;
+            color: white;
             font-size: 18px;
         }
 
@@ -164,7 +140,7 @@
         <span id="time">TIME: <span id="time-left" style="color: green;">120</span> s</span>
         <span id="hits">PTS: <span id="hits-count" style="color: yellow;">0</span></span>
     </div>
-     <table>
+    <table>
         <thead>
             <tr>
                 <th class="letter"></th>
@@ -181,8 +157,8 @@
             </tr>
         </thead>
         <tbody>
-              <!-- Quadrante Vermelho -->
-           <tr>
+            <!-- Quadrante Vermelho -->
+            <tr>
                 <th class="number">01</th>
                 <td class="red"></td>
                 <td class="red"></td>
@@ -315,10 +291,8 @@
             </tr>
         </tbody>
     </table>
-    <div class="center-container">
-        <input type="password" id="password-input" placeholder="PASSWORD">
-        <button id="start-button">START</button>
-    </div>
+    <input type="password" id="password-input" placeholder="PASSWORD">
+    <button id="start-button">!!!     START     !!!</button>
 
     <!-- POSIÇÃO INIMIGA -->
     <div id="teriana-coordinates"></div>
@@ -350,13 +324,13 @@
         // Evento de clique no botão INICIAR
         startButton.addEventListener('click', () => {
             const password = passwordInput.value;
-            if (password === 'teste') { // Alteração da senha
+            if (password === 'oper123') { // Alteração da senha
                 if (!timerRunning) {
                     timerRunning = true;
                     timer = setInterval(updateTime, 1000);
                 }
             } else {
-                alert('SENHA INCORRETA! MARCELO TA DE OLHO!');
+                alert('Senha incorreta. Insira a senha correta para iniciar o jogo.');
             }
         });
 
