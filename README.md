@@ -17,13 +17,11 @@
 
         table {
             border-collapse: collapse;
-            margin-top: 20px; /* Centralizar a tabela verticalmente */
         }
 
         table, th, td {
             border: 1px solid white;
-            background-color: black; /* Alterado para preto */
-            color: white; /* Alterado para branco */
+            background-color: black;
         }
 
         th, td {
@@ -59,7 +57,7 @@
         }
 
         td.miss {
-            background-color: black; /* Alterado para preto */
+            background-color: black;
         }
 
         td.red {
@@ -96,12 +94,25 @@
             font-size: 18px;
             display: inline-block;
             margin-right: 10px;
+        }
+
+        #shots {
             color: yellow;
         }
 
+        #time {
+            color: yellow;
+        }
+
+        #hits {
+            color: yellow;
+        }
+
+        /* Centralize o campo de senha e o botão START */
         #password-input, #start-button {
+            display: block;
+            margin: 10px auto;
             width: 150px;
-            margin: 5px;
             padding: 5px;
             text-align: center;
             color: yellow;
@@ -291,8 +302,11 @@
             </tr>
         </tbody>
     </table>
-    <input type="password" id="password-input" placeholder="PASSWORD">
-    <button id="start-button">!!!     START     !!!</button>
+    <!-- Centralize o campo de senha e o botão START verticalmente -->
+    <div style="text-align: center;">
+        <input type="password" id="password-input" placeholder="PASSWORD">
+        <button id="start-button">!!!     START     !!!</button>
+    </div>
 
     <!-- POSIÇÃO INIMIGA -->
     <div id="teriana-coordinates"></div>
