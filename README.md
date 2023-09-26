@@ -18,7 +18,8 @@
         table {
             border-collapse: collapse;
             table-layout: fixed; /* Define a largura da tabela como fixa */
-            z-index: -1; /* Empurra a tabela para trás */
+            position: relative; /* Adicionado para permitir que a tabela ocupe o fundo preto */
+            z-index: 1; /* Z-index definido para manter a tabela na frente do fundo */
         }
 
         table, th, td {
@@ -30,8 +31,7 @@
             height: 30px;
             text-align: center;
             cursor: pointer;
-            background-color: transparent !important; /* Fundo transparente para todas as células */
-            opacity: 1 !important; /* Opacidade total para evitar transparência */
+            background-color: black; /* Fundo preto para todas as células */
         }
 
         th {
@@ -40,12 +40,12 @@
         }
 
         th.letter, th.number {
-            background-color: transparent !important;
+            background-color: transparent;
             color: white;
         }
 
         th.I {
-            width: 30px; /* Largura fixa para a coluna "I" */
+            width: 30px;
         }
 
         td.clicked {
@@ -64,7 +64,7 @@
         }
 
         td.miss {
-            background-color: transparent !important; /* Fundo transparente para células não atingidas */
+            background-color: black;
         }
 
         td.red {
@@ -101,6 +101,17 @@
             font-size: 18px;
             display: inline-block;
             margin-right: 10px;
+        }
+
+        #shots {
+            color: yellow;
+        }
+
+        #time {
+            color: yellow;
+        }
+
+        #hits {
             color: yellow;
         }
 
@@ -111,18 +122,18 @@
             text-align: center;
             color: yellow;
         }
-
+        
         .center-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px; /* Ajuste a margem superior conforme necessário */
+            margin-top: 20px;
         }
 
         #password-input, #start-button {
             margin: 5px;
         }
-
+        
         #teriana-coordinates {
             color: yellow;
             font-size: 20px;
@@ -137,12 +148,12 @@
                 opacity: 0;
             }
         }
-
+        
         #time-left {
             color: white;
             font-size: 18px;
         }
-
+        
         body {
             background-image: url("https://i.gifer.com/XzZg.gif");
             background-size: cover;
@@ -167,8 +178,8 @@
                 <th class="letter">E</th>
                 <th class="letter">F</th>
                 <th class="letter">G</th>
-                <th class="letter">H</th>
-                <th class="letter I">I</th> <!-- Adicionada classe I para a coluna "I" -->
+                <th class="letter H">H</th> <!-- Alterada para "H" -->
+                <th class="letter I">I</th>
                 <th class="letter">J</th>
             </tr>
         </thead>
@@ -243,7 +254,7 @@
             <tr>
                 <th class="number">06</th>
                 <td class="yellow"></td>
-                <td class "yellow"></td>
+                <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -325,7 +336,7 @@
         const startButton = document.getElementById('start-button');
         const passwordInput = document.getElementById('password-input');
         let shotsRemaining = 12;
-        let time = 120; // Alteração do tempo para 120 segundos
+        let time = 120;
         let timerRunning = false;
         let hits = 0;
 
@@ -342,7 +353,7 @@
         // Evento de clique no botão INICIAR
         startButton.addEventListener('click', () => {
             const password = passwordInput.value;
-            if (password === 'oper123') { // Alteração da senha
+            if (password === 'oper123') {
                 if (!timerRunning) {
                     timerRunning = true;
                     timer = setInterval(updateTime, 1000);
