@@ -18,11 +18,11 @@
         table {
             border-collapse: collapse;
             table-layout: fixed; /* Define a largura da tabela como fixa */
+            background-color: black; /* Defina o fundo da tabela como preto */
         }
 
         table, th, td {
             border: 1px solid white;
-            background-color: transparent !important; /* Fundo transparente para todas as células */
         }
 
         th, td {
@@ -30,6 +30,7 @@
             height: 30px;
             text-align: center;
             cursor: pointer;
+            background-color: transparent !important; /* Fundo transparente para todas as células */
         }
 
         th {
@@ -252,7 +253,7 @@
             <tr>
                 <th class="number">06</th>
                 <td class="yellow"></td>
-                <td class="yellow"></td>
+                <td class "yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
                 <td class="yellow"></td>
@@ -407,3 +408,4 @@
     </script>
 </body>
 </html>
+
