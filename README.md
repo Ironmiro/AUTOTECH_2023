@@ -389,7 +389,7 @@
 
         // Função para verificar se a coordenada pertence à nave Teriana
         function isTerianaCoordinate(coordinate) {
-            const terianaCoordinates = ['H6', 'H7', 'H9', 'I6', 'I7', 'I8', 'I9', 'J6', 'J7', 'J8'];
+            const terianaCoordinates = ['H2', 'H3', 'H5', 'I2', 'I3', 'I4', 'I5', 'J2', 'J3', 'J4'];
             return terianaCoordinates.includes(coordinate);
         }
     </script>
