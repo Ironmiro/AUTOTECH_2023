@@ -339,7 +339,7 @@
         // Evento de clique no botão INICIAR
         startButton.addEventListener('click', () => {
             const password = passwordInput.value;
-            if (password === 'teste') { // Alteração da senha
+            if (password === 'u55C@ttalin!') { // Alteração da senha
                 if (!timerRunning) {
                     timerRunning = true;
                     timer = setInterval(updateTime, 1000);
